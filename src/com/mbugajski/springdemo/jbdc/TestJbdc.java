@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class TestJbdc {
 	public static void main(String[] args) {
 
-		String jbdcUrl = "jdbc:mysql://localhost/hb-01-one-to-many?useSSL=false&useUnicode=true&"
+		String jbdcUrl = "jdbc:mysql://localhost/hb-03-many-to-many?useSSL=false&useUnicode=true&"
 				+ "useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String user = "hbstudent";
 		String pass = "hbstudent";
