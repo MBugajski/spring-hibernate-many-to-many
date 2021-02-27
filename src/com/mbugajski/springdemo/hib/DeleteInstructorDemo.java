@@ -8,6 +8,7 @@ import com.mbugajski.springdemo.hib.entity.Course;
 import com.mbugajski.springdemo.hib.entity.Instructor;
 import com.mbugajski.springdemo.hib.entity.InstructorDetail;
 import com.mbugajski.springdemo.hib.entity.Review;
+import com.mbugajski.springdemo.hib.entity.Student;
 
 public class DeleteInstructorDemo {
 
@@ -18,6 +19,7 @@ public class DeleteInstructorDemo {
 				.addAnnotatedClass(InstructorDetail.class)
 				.addAnnotatedClass(Course.class)
 				.addAnnotatedClass(Review.class)
+				.addAnnotatedClass(Student.class)
 				.buildSessionFactory();
 
 		Session session = factory.getCurrentSession();
