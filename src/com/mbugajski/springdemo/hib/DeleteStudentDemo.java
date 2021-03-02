@@ -10,7 +10,7 @@ import com.mbugajski.springdemo.hib.entity.InstructorDetail;
 import com.mbugajski.springdemo.hib.entity.Review;
 import com.mbugajski.springdemo.hib.entity.Student;
 
-public class DeleteCourseAndReviewsDemo {
+public class DeleteStudentDemo {
 
 	public static void main(String[] args) {
 
@@ -25,24 +25,15 @@ public class DeleteCourseAndReviewsDemo {
 		Session session = factory.getCurrentSession();
 
 		try {
+
 			session.beginTransaction();
 		
-			int theId = 20;
+			Student tempStudent = session.get(Student.class, 10);
 			
-			Course tempCourse = session.get(Course.class, theId);
-
-			
-			System.out.println("Deleting the course: " + tempCourse.getTitle());
-			
-
-			System.out.println("Reviews: ");
-			int index = 0;
-			for (Review review : tempCourse.getReviews()) {
-				index++;
-				System.out.println("Review " + index + ": " + review.getComment());
+			System.out.println("Deleting student: " + tempStudent.getFirstName() + " " + tempStudent.getLastName());
+			if (tempStudent != null) {
+				session.delete(tempStudent);
 			}
-			
-			session.delete(tempCourse);
 			
 			session.getTransaction().commit();
 		} catch (Exception exc) {
